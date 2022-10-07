@@ -16,7 +16,7 @@ import { useState } from "react";
 import { useFloatingInput } from "../hooks/useFloatingInput";
 import axios from "axios";
 import AuthInput from "../components/AuthInput";
-import { IconRegistered, IconUserPlus } from "@tabler/icons";
+import { IconUserPlus } from "@tabler/icons";
 import Link from "next/link";
 
 export default function RegisterForm(props: PaperProps) {
@@ -63,7 +63,6 @@ export default function RegisterForm(props: PaperProps) {
               );
               if (!data.user) return;
               console.log("USER SIGNED UP", data.user);
-              //   navigate("/login");
             })}
           >
             <Stack mt="xl">

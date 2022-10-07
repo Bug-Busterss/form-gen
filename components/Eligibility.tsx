@@ -1,5 +1,4 @@
 import { Card, Group, Text, List } from "@mantine/core";
-import { IconDots, IconEye, IconFileZip, IconTrash } from "@tabler/icons";
 
 export default function Eligibility() {
   return (

@@ -1,22 +1,21 @@
-import '../styles/globals.css';
-import type { AppProps } from 'next/app';
-import { MantineProvider } from '@mantine/core';
-import HeaderMegaMenu from '../components/header';
-import HeaderMenuColored from '../components/header';
-import { SessionProvider, SessionProviderProps } from 'next-auth/react';
+import "../styles/globals.css";
+import type { AppProps } from "next/app";
+import { MantineProvider } from "@mantine/core";
+import HeaderMenuColored from "../components/header";
+import { SessionProvider, SessionProviderProps } from "next-auth/react";
 
 const LINKS = [
   {
-    label: 'Home',
-    link: '/',
+    label: "Home",
+    link: "/",
   },
   {
-    label: 'Contact Us',
-    link: '/contactus',
+    label: "Contact Us",
+    link: "/contactus",
   },
   {
-    label: 'About',
-    link: '/aboutus',
+    label: "About",
+    link: "/aboutus",
   },
 ];
 
@@ -30,7 +29,7 @@ function MyApp({
       withNormalizeCSS
       theme={{
         /** Put your mantine theme override here */
-        colorScheme: 'light',
+        colorScheme: "light",
       }}
     >
       <SessionProvider>

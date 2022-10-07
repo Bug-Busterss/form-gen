@@ -110,7 +110,6 @@ export default function HeaderMenuColored({ links }: HeaderSearchProps) {
               <Button variant="default" onClick={() => signIn()}>
                 Log in
               </Button>
-              {/* <Button>Sign up</Button> */}
             </Group>
           )}
         </div>

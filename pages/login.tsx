@@ -1,11 +1,7 @@
 import {
-  Card,
-  Image,
   Text,
-  Badge,
   Button,
   Group,
-  CardSection,
   Center,
   Container,
   Paper,
@@ -31,19 +27,11 @@ export default function MyLogin() {
             Login
           </Text>
           <Stack mt="md">
-            <AuthInput
-              input={TextInput}
-              label="Email"
-              //   {...form.getInputProps("username")}
-            />
-            <AuthInput
-              input={PasswordInput}
-              label="Password"
-              //   {...form.getInputProps("password")}
-            />
+            <AuthInput input={TextInput} label="Email" />
+            <AuthInput input={PasswordInput} label="Password" />
           </Stack>
           <Group position="apart" mt="xl">
-            <Anchor type="button" color="dimmed" size="xs">
+            <Anchor type="button" sx={{ color: "#101113" }} size="xs">
               Don't have an account? Register
             </Anchor>
             <Button

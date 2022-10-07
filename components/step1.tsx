@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { TextInput, createStyles, NativeSelect, Group } from "@mantine/core";
+import { createStyles, NativeSelect, Group } from "@mantine/core";
 import { DatePicker } from "@mantine/dates";
 import FloatingLabelInput from "./floatinginput";
 
@@ -52,40 +52,34 @@ export default function Partone() {
 
   return (
     <div>
-      <Group position='center' spacing='xl' grow>
-        <FloatingLabelInput label='First Name' required='true' />
-        <FloatingLabelInput label={`Husband's Name`} required='true' />
-        <FloatingLabelInput label='Last Name ( Surname )' required='true' />
+      <Group position="center" spacing="xl" grow>
+        <FloatingLabelInput label="First Name" required="true" />
+        <FloatingLabelInput label={`Husband's Name`} required="true" />
+        <FloatingLabelInput label="Last Name ( Surname )" required="true" />
       </Group>
-      <Group position='center' spacing='xl' grow>
-        <FloatingLabelInput label={`Father's Name`} required='true' />
+      <Group position="center" spacing="xl" grow>
+        <FloatingLabelInput label={`Father's Name`} required="true" />
       </Group>
-      <Group position='center' spacing='xl' grow>
+      <Group position="center" spacing="xl" grow>
         <NativeSelect
           data={["Hindu", "Muslim", "Parsi", "Sikh", "Other"]}
-          // placeholder='Pick one'
-          // label='Caste'
-          description='Select Your Religion'
-          radius='md'
-          size='md'
-          // withAsterisk
+          description="Select Your Religion"
+          radius="md"
+          size="md"
         />
         <NativeSelect
           data={["O.B.C.", "S.T", "S.C.", "General", "Other"]}
-          // placeholder='Pick one'
-          // label='Caste'
-          description='Select Your Caste'
-          radius='md'
-          size='md'
-          // withAsterisk
+          description="Select Your Caste"
+          radius="md"
+          size="md"
         />
       </Group>
-      <Group position='center' spacing='xl' grow>
-        <DatePicker placeholder='Pick date' label='Birth Date' withAsterisk />
-        <FloatingLabelInput label='Adhaar Card No.' required='true' />
+      <Group position="center" spacing="xl" grow>
+        <DatePicker placeholder="Pick date" label="Birth Date" withAsterisk />
+        <FloatingLabelInput label="Adhaar Card No." required="true" />
       </Group>
-      <Group position='center' spacing='xl' grow>
-        <FloatingLabelInput label='Address' required='true' />
+      <Group position="center" spacing="xl" grow>
+        <FloatingLabelInput label="Address" required="true" />
       </Group>
     </div>
   );
