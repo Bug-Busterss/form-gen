@@ -1,5 +1,5 @@
-import type { NextPage } from "next";
-import Requiremnts from "../components/requrements";
+import type { NextPage } from 'next';
+import Requiremnts from '../components/requrements';
 
 const Home: NextPage = () => {
   return (
