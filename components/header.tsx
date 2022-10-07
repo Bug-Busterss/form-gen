@@ -1,3 +1,4 @@
+import { signIn, signOut, useSession } from "next-auth/react";
 import {
   createStyles,
   Header,
@@ -69,6 +70,7 @@ interface HeaderSearchProps {
 }
 
 export default function HeaderMenuColored({ links }: HeaderSearchProps) {
+  const { data: session } = useSession();
   const [opened, { toggle }] = useDisclosure(false);
   const { classes } = useStyles();
 
@@ -78,14 +80,15 @@ export default function HeaderMenuColored({ links }: HeaderSearchProps) {
         key={link.label}
         href={link.link}
         className={classes.link}
-        onClick={(event) => event.preventDefault()}>
+        onClick={(event) => event.preventDefault()}
+      >
         {link.label}
       </a>
     );
   });
 
   return (
-    <Header height={56} className={classes.header} mb={120}>
+    <Header height={56} className={classes.header} mb={12}>
       <Container fluid>
         <div className={classes.inner}>
           <Group spacing={5} className={classes.links}>
@@ -95,15 +98,21 @@ export default function HeaderMenuColored({ links }: HeaderSearchProps) {
             opened={opened}
             onClick={toggle}
             className={classes.burger}
-            size='sm'
-            color='#fff'
+            size="sm"
+            color="#fff"
           />
-          <Divider my='sm' />
+          <Divider my="sm" />
 
-          <Group position='apart'>
-            <Button variant='default'>Log in</Button>
-            <Button>Sign up</Button>
-          </Group>
+          {session ? (
+            <button onClick={() => signOut()}>Sign out</button>
+          ) : (
+            <Group position="apart">
+              <Button variant="default" onClick={() => signIn()}>
+                Log in
+              </Button>
+              {/* <Button>Sign up</Button> */}
+            </Group>
+          )}
         </div>
       </Container>
     </Header>

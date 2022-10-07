@@ -5,7 +5,7 @@ export default function Requiremnts() {
     <Card withBorder shadow="sm" radius="md" m="sm" mt="xl">
       <Card.Section withBorder inheritPadding py="xs">
         <Group position="apart">
-          <Text weight={500}>Requiremnets</Text>
+          <Text weight={700}>Requiremnets</Text>
         </Group>
       </Card.Section>
 
@@ -23,7 +23,7 @@ export default function Requiremnts() {
             <List.Item>Income certificate</List.Item>
             <List.Item>Caste certificate</List.Item>
             <List.Item>Passport size photo</List.Item>
-            <List.Item mb="sm">Registered mobile number</List.Item>
+            <List.Item mb="md">Registered mobile number</List.Item>
           </List>
         </Group>
       </Card.Section>

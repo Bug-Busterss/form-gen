@@ -4,12 +4,17 @@ import { IconDots, IconEye, IconFileZip, IconTrash } from "@tabler/icons";
 export default function Eligibility() {
   return (
     <Card withBorder shadow="sm" radius="md" m="sm">
-      <Card.Section withBorder inheritPadding py="xs">
+      <Card.Section
+        withBorder
+        inheritPadding
+        py="xs"
+        sx={{ fontSize: "1.3rem" }}
+      >
         <Group position="apart">
           <Text weight={700}>Eligibility Criteria</Text>
         </Group>
       </Card.Section>
-      <Card.Section m="sm">
+      <Card.Section m="sm" sx={{ fontSize: "1rem" }}>
         <Group>
           <List size="lg">
             <List.Item>
@@ -43,7 +48,7 @@ export default function Eligibility() {
               family income should be less than or equal to the 1 lakh and 50K
               INR per annum.
             </List.Item>
-            <List.Item>
+            <List.Item mb="md">
               If the widow woman will be married again, then she cannot take the
               benefit of this scheme.
             </List.Item>
