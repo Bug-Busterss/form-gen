@@ -9,6 +9,9 @@ import prisma from '../../../lib/prisma';
 
 export const authOptions: NextAuthOptions = {
   adapter: PrismaAdapter(prisma),
+  pages: {
+    signIn: '/login',
+  },
   session: {
     strategy: 'jwt',
   },
@@ -16,6 +19,7 @@ export const authOptions: NextAuthOptions = {
     CredentialsProvider({
       // The name to display on the sign in form (e.g. "Sign in with...")
       name: 'Credentials',
+      type: 'credentials',
       credentials: {},
       async authorize(credentials, req) {
         // Add logic here to look up the user from the credentials supplied

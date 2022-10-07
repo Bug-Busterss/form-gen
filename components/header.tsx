@@ -1,4 +1,4 @@
-import { signIn, signOut, useSession } from "next-auth/react";
+import { signIn, signOut, useSession } from 'next-auth/react';
 import {
   createStyles,
   Header,
@@ -7,13 +7,14 @@ import {
   Container,
   Divider,
   Button,
-} from "@mantine/core";
-import { useDisclosure } from "@mantine/hooks";
+} from '@mantine/core';
+import { useDisclosure } from '@mantine/hooks';
+import Link from 'next/link';
 
-const useStyles = createStyles((theme) => ({
+const useStyles = createStyles(theme => ({
   header: {
     backgroundColor: theme.fn.variant({
-      variant: "filled",
+      variant: 'filled',
       color: theme.primaryColor,
     }).background,
     borderBottom: 0,
@@ -21,36 +22,36 @@ const useStyles = createStyles((theme) => ({
 
   inner: {
     height: 56,
-    display: "flex",
-    justifyContent: "space-between",
-    alignItems: "center",
+    display: 'flex',
+    justifyContent: 'space-between',
+    alignItems: 'center',
   },
 
   links: {
-    [theme.fn.smallerThan("sm")]: {
-      display: "none",
+    [theme.fn.smallerThan('sm')]: {
+      display: 'none',
     },
   },
 
   burger: {
-    [theme.fn.largerThan("sm")]: {
-      display: "none",
+    [theme.fn.largerThan('sm')]: {
+      display: 'none',
     },
   },
 
   link: {
-    display: "block",
+    display: 'block',
     lineHeight: 1,
-    padding: "8px 12px",
+    padding: '8px 12px',
     borderRadius: theme.radius.sm,
-    textDecoration: "none",
+    textDecoration: 'none',
     color: theme.white,
     fontSize: theme.fontSizes.sm,
     fontWeight: 500,
 
-    "&:hover": {
+    '&:hover': {
       backgroundColor: theme.fn.lighten(
-        theme.fn.variant({ variant: "filled", color: theme.primaryColor })
+        theme.fn.variant({ variant: 'filled', color: theme.primaryColor })
           .background!,
         0.1
       ),
@@ -74,13 +75,13 @@ export default function HeaderMenuColored({ links }: HeaderSearchProps) {
   const [opened, { toggle }] = useDisclosure(false);
   const { classes } = useStyles();
 
-  const items = links.map((link) => {
+  const items = links.map(link => {
     return (
       <a
         key={link.label}
         href={link.link}
         className={classes.link}
-        onClick={(event) => event.preventDefault()}
+        onClick={event => event.preventDefault()}
       >
         {link.label}
       </a>
@@ -98,18 +99,23 @@ export default function HeaderMenuColored({ links }: HeaderSearchProps) {
             opened={opened}
             onClick={toggle}
             className={classes.burger}
-            size="sm"
-            color="#fff"
+            size='sm'
+            color='#fff'
           />
-          <Divider my="sm" />
+          <Divider my='sm' />
 
           {session ? (
             <button onClick={() => signOut()}>Sign out</button>
           ) : (
-            <Group position="apart">
-              <Button variant="default" onClick={() => signIn()}>
-                Log in
-              </Button>
+            <Group position='apart'>
+              <Link href='/login' passHref>
+                <Button variant='default' component='a'>
+                  Log in
+                </Button>
+              </Link>
+              <Link href='/register' passHref>
+                <Button component='a'>Sign up</Button>
+              </Link>
             </Group>
           )}
         </div>
