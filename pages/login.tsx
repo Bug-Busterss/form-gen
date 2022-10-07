@@ -19,9 +19,14 @@ import AuthInput from "../components/AuthInput";
 
 export default function MyLogin() {
   return (
-    <Container>
+    <Container sx={{ marginTop: "10rem" }}>
       <Center>
-        <Paper radius="md" p="xl" withBorder>
+        <Paper
+          radius="md"
+          p="md"
+          withBorder
+          sx={{ backgroundColor: "#909296" }}
+        >
           <Text size="lg" weight={500}>
             Login
           </Text>
