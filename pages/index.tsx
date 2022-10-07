@@ -1,10 +1,12 @@
 import type { NextPage } from "next";
-import Requiremnts from "../components/requrements";
+import Eligibility from "../components/Eligibility";
+// import Requiremnts from "../components/requrements";
 
 const Home: NextPage = () => {
   return (
     <div>
-      <Requiremnts />
+      {/* <Requiremnts /> */}
+      <Eligibility />
     </div>
   );
 };
