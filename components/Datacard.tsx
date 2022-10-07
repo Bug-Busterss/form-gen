@@ -5,10 +5,8 @@ import {
   Group,
   Badge,
   Button,
-  ActionIcon,
   createStyles,
 } from "@mantine/core";
-import { useState } from "react";
 
 const useStyles = createStyles((theme) => ({
   card: {
@@ -49,20 +47,11 @@ export default function DataMainCard({
 }: BadgeCardProps) {
   const { classes, theme } = useStyles();
 
-  //   const features = badges.map((badge) => (
-  //     <Badge
-  //       color={theme.colorScheme === "dark" ? "dark" : "gray"}
-  //       key={badge.label}
-  //       leftSection={badge.emoji}>
-  //       {badge.label}
-  //     </Badge>
-  //   ));
-
   return (
     <Card
       withBorder
-      radius='md'
-      p='md'
+      radius="md"
+      p="md"
       className={classes.card}
       sx={(theme) => ({
         background: theme.colors.gray[0],
@@ -71,24 +60,25 @@ export default function DataMainCard({
         "@media (max-width: 755px)": {
           padding: theme.spacing.sm,
         },
-      })}>
+      })}
+    >
       <Card.Section>
         <Image src={passportphoto} alt={Name} height={180} />
       </Card.Section>
 
-      <Card.Section className={classes.section} mt='md'>
-        <Group position='center'>
-          <Text size='lg' weight={500}>
+      <Card.Section className={classes.section} mt="md">
+        <Group position="center">
+          <Text size="lg" weight={500}>
             {Name}
           </Text>
           <Group>
-            <Badge size='sm'>{Status}</Badge>
+            <Badge size="sm">{Status}</Badge>
           </Group>
         </Group>
       </Card.Section>
 
-      <Group mt='xs'>
-        <Button radius='md' style={{ flex: 1 }}>
+      <Group mt="xs">
+        <Button radius="md" style={{ flex: 1 }}>
           Show details
         </Button>
       </Group>

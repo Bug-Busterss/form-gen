@@ -1,4 +1,4 @@
-import { Card, Group, Text, List, Center } from "@mantine/core";
+import { Card, Group, Text, List } from "@mantine/core";
 
 export default function Requiremnts() {
   return (

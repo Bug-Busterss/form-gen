@@ -11,14 +11,14 @@ import {
   Container,
   Center,
   TextInput,
-  Tooltip,
-} from '@mantine/core';
-import { useState } from 'react';
-import axios from 'axios';
-import AuthInput from '../components/AuthInput';
-import { IconRegistered, IconUserPlus } from '@tabler/icons';
-import Link from 'next/link';
-import { useRouter } from 'next/router';
+} from "@mantine/core";
+import { useState } from "react";
+import { useFloatingInput } from "../hooks/useFloatingInput";
+import axios from "axios";
+import AuthInput from "../components/AuthInput";
+import { IconUserPlus } from "@tabler/icons";
+import Link from "next/link";
+import {useRouter} from 'next/router'
 
 export default function RegisterForm(props: PaperProps) {
   const [loading, setLoading] = useState(false);
