@@ -8,6 +8,7 @@ import {
   ActionIcon,
   createStyles,
 } from "@mantine/core";
+import { useState } from "react";
 
 const useStyles = createStyles((theme) => ({
   card: {
@@ -39,7 +40,6 @@ interface BadgeCardProps {
   passportphoto: string;
   Name: string;
   Status: string;
-  description: string;
 }
 
 export default function DataMainCard({
@@ -59,17 +59,31 @@ export default function DataMainCard({
   //   ));
 
   return (
-    <Card withBorder radius='md' p='md' className={classes.card}>
+    <Card
+      withBorder
+      radius='md'
+      p='md'
+      className={classes.card}
+      sx={(theme) => ({
+        background: theme.colors.gray[0],
+        padding: theme.spacing.md,
+
+        "@media (max-width: 755px)": {
+          padding: theme.spacing.sm,
+        },
+      })}>
       <Card.Section>
         <Image src={passportphoto} alt={Name} height={180} />
       </Card.Section>
 
       <Card.Section className={classes.section} mt='md'>
-        <Group position='apart'>
+        <Group position='center'>
           <Text size='lg' weight={500}>
             {Name}
           </Text>
-          <Badge size='sm'>{Status}</Badge>
+          <Group>
+            <Badge size='sm'>{Status}</Badge>
+          </Group>
         </Group>
       </Card.Section>
 
