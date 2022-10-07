@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Stepper, Button, Group } from "@mantine/core";
 import Partone from "./step1";
+import { Parttwo } from "./step2";
 
 export default function Stepslider() {
   const [active, setActive] = useState(1);
@@ -18,6 +19,7 @@ export default function Stepslider() {
         </Stepper.Step>
         <Stepper.Step label='Second step' description='Upload Documents'>
           Step 2 content: Upload Documents
+          <Parttwo />
         </Stepper.Step>
         <Stepper.Step label='Final step' description='Get full access'>
           Step 3 content: Get full access
