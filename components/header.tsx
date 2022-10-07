@@ -78,14 +78,15 @@ export default function HeaderMenuColored({ links }: HeaderSearchProps) {
         key={link.label}
         href={link.link}
         className={classes.link}
-        onClick={(event) => event.preventDefault()}>
+        onClick={(event) => event.preventDefault()}
+      >
         {link.label}
       </a>
     );
   });
 
   return (
-    <Header height={56} className={classes.header} mb={120}>
+    <Header height={56} className={classes.header} mb={12}>
       <Container fluid>
         <div className={classes.inner}>
           <Group spacing={5} className={classes.links}>
@@ -95,13 +96,13 @@ export default function HeaderMenuColored({ links }: HeaderSearchProps) {
             opened={opened}
             onClick={toggle}
             className={classes.burger}
-            size='sm'
-            color='#fff'
+            size="sm"
+            color="#fff"
           />
-          <Divider my='sm' />
+          <Divider my="sm" />
 
-          <Group position='apart'>
-            <Button variant='default'>Log in</Button>
+          <Group position="apart">
+            <Button variant="default">Log in</Button>
             <Button>Sign up</Button>
           </Group>
         </div>
