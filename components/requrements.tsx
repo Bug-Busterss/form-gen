@@ -2,7 +2,7 @@ import { Card, Group, Text, List, Center } from "@mantine/core";
 
 export default function Requiremnts() {
   return (
-    <Card withBorder shadow="sm" radius="md" m="sm">
+    <Card withBorder shadow="sm" radius="md" m="sm" mt="xl">
       <Card.Section withBorder inheritPadding py="xs">
         <Group position="apart">
           <Text weight={500}>Requiremnets</Text>
