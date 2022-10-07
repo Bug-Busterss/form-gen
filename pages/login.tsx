@@ -21,14 +21,14 @@ export default function MyLogin() {
   return (
     <Container>
       <Center>
-        <Paper radius="md" p="md" withBorder>
+        <Paper radius="md" p="xl" withBorder>
           <Text size="lg" weight={500}>
             Login
           </Text>
           <Stack mt="md">
             <AuthInput
               input={TextInput}
-              label="Username"
+              label="Email"
               //   {...form.getInputProps("username")}
             />
             <AuthInput
@@ -37,7 +37,10 @@ export default function MyLogin() {
               //   {...form.getInputProps("password")}
             />
           </Stack>
-          <Group position="apart" mt="md" grow>
+          <Group position="apart" mt="xl">
+            <Anchor type="button" color="dimmed" size="xs">
+              Don't have an account? Register
+            </Anchor>
             <Button
               rightIcon={<IconLogin size="18px" />}
               variant="gradient"
