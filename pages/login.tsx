@@ -33,7 +33,7 @@ export default function MyLogin() {
           <Stack mt="md">
             <AuthInput
               input={TextInput}
-              label="Username"
+              label="Email"
               //   {...form.getInputProps("username")}
             />
             <AuthInput
@@ -42,7 +42,10 @@ export default function MyLogin() {
               //   {...form.getInputProps("password")}
             />
           </Stack>
-          <Group position="apart" mt="md" grow>
+          <Group position="apart" mt="xl">
+            <Anchor type="button" color="dimmed" size="xs">
+              Don't have an account? Register
+            </Anchor>
             <Button
               rightIcon={<IconLogin size="18px" />}
               variant="gradient"

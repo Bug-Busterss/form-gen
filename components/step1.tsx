@@ -53,8 +53,9 @@ export default function Partone() {
   return (
     <div>
       <Group position='center' spacing='xl' grow>
-        <FloatingLabelInput label='Name' required='true' />
+        <FloatingLabelInput label='First Name' required='true' />
         <FloatingLabelInput label={`Husband's Name`} required='true' />
+        <FloatingLabelInput label='Last Name ( Surname )' required='true' />
       </Group>
       <Group position='center' spacing='xl' grow>
         <FloatingLabelInput label={`Father's Name`} required='true' />
@@ -81,6 +82,7 @@ export default function Partone() {
       </Group>
       <Group position='center' spacing='xl' grow>
         <DatePicker placeholder='Pick date' label='Birth Date' withAsterisk />
+        <FloatingLabelInput label='Adhaar Card No.' required='true' />
       </Group>
       <Group position='center' spacing='xl' grow>
         <FloatingLabelInput label='Address' required='true' />
