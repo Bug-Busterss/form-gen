@@ -6,7 +6,7 @@ export default function Eligibility() {
     <Card withBorder shadow="sm" radius="md" m="sm">
       <Card.Section withBorder inheritPadding py="xs">
         <Group position="apart">
-          <Text weight={500}>Eligibility Criteria</Text>
+          <Text weight={700}>Eligibility Criteria</Text>
         </Group>
       </Card.Section>
       <Card.Section m="sm">
