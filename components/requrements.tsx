@@ -1,66 +1,32 @@
-import {
-  Card,
-  Group,
-  Text,
-  Menu,
-  ActionIcon,
-  Image,
-  SimpleGrid,
-  List,
-} from "@mantine/core";
-import { IconDots, IconEye, IconFileZip, IconTrash } from "@tabler/icons";
+import { Card, Group, Text, List, Center } from "@mantine/core";
 
 export default function Requiremnts() {
   return (
-    <Card withBorder shadow="sm" radius="md">
+    <Card withBorder shadow="sm" radius="md" m="sm" mt="xl">
       <Card.Section withBorder inheritPadding py="xs">
         <Group position="apart">
-          <Text weight={500}>Eligibility Criteria</Text>
-        </Group>
-      </Card.Section>
-      <Card.Section>
-        <Group>
-          <List size="lg">
-            <List.Item>
-              The applicant must acquire the domicile of Gujarat.
-            </List.Item>
-            <List.Item>
-              The candidate must come under the category of the BPL (Below the
-              poverty line)
-            </List.Item>
-            <List.Item>
-              The minimum age of the applicant should be 18 years and a maximum
-              of 60 years.
-            </List.Item>
-            <List.Item>
-              Only widow candidates are eligible for this scheme.
-            </List.Item>
-            <List.Item>
-              The candidate must relate to the EWS (Economical weaker section)
-              of the society.
-            </List.Item>
-            <List.Item>
-              The certificate of annual income has to be submitted along with
-              the application form.
-            </List.Item>
-            <List.Item>
-              If the candidate belongs from the rural area, then the salary
-              should be less than or equal should 1 lakh and 20k INR per annum.
-            </List.Item>
-            <List.Item>
-              And if the applicant belongs from the urban area, then the annual
-              family income should be less than or equal to the 1 lakh and 50K
-              INR per annum.
-            </List.Item>
-            <List.Item>
-              If the widow woman will be married again, then she cannot take the
-              benefit of this scheme.
-            </List.Item>
-          </List>
+          <Text weight={500}>Requiremnets</Text>
         </Group>
       </Card.Section>
 
-      <Card.Section mt="sm"></Card.Section>
+      <Card.Section m="sm">
+        <Group>
+          <List size="lg">
+            <List.Item>Aadhar card</List.Item>
+            <List.Item>Ration card</List.Item>
+            <List.Item>Identity card (voter id etc) </List.Item>
+            <List.Item>Husband’s death certificate </List.Item>
+            <List.Item>
+              Bank passbook, bank account number and ifsc code d
+            </List.Item>
+            <List.Item>Birth certificate</List.Item>
+            <List.Item>Income certificate</List.Item>
+            <List.Item>Caste certificate</List.Item>
+            <List.Item>Passport size photo</List.Item>
+            <List.Item mb="sm">Registered mobile number</List.Item>
+          </List>
+        </Group>
+      </Card.Section>
     </Card>
   );
 }
