@@ -46,7 +46,7 @@ export default function RegisterForm(props: PaperProps) {
           p="xl"
           withBorder
           {...props}
-          sx={{ backgroundColor: "#909296" }}
+          sx={{ backgroundColor: "#A6A7AB" }}
         >
           <Text size="lg" weight={500}>
             Register

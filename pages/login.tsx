@@ -25,7 +25,7 @@ export default function MyLogin() {
           radius="md"
           p="md"
           withBorder
-          sx={{ backgroundColor: "#909296" }}
+          sx={{ backgroundColor: "#A6A7AB" }}
         >
           <Text size="lg" weight={500}>
             Login
