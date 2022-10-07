@@ -40,28 +40,23 @@ interface BadgeCardProps {
   Name: string;
   Status: string;
   description: string;
-  badges: {
-    emoji: string;
-    label: string;
-  }[];
 }
 
 export default function DataMainCard({
   passportphoto,
   Name,
   Status,
-  badges,
 }: BadgeCardProps) {
   const { classes, theme } = useStyles();
 
-  const features = badges.map((badge) => (
-    <Badge
-      color={theme.colorScheme === "dark" ? "dark" : "gray"}
-      key={badge.label}
-      leftSection={badge.emoji}>
-      {badge.label}
-    </Badge>
-  ));
+  //   const features = badges.map((badge) => (
+  //     <Badge
+  //       color={theme.colorScheme === "dark" ? "dark" : "gray"}
+  //       key={badge.label}
+  //       leftSection={badge.emoji}>
+  //       {badge.label}
+  //     </Badge>
+  //   ));
 
   return (
     <Card withBorder radius='md' p='md' className={classes.card}>

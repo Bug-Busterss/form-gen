@@ -4,13 +4,7 @@ import DataMainCard from "../components/Datacard";
 export default function Dashboard() {
   return (
     <div>
-      <DataMainCard
-        passportphoto={""}
-        title={""}
-        country={""}
-        description={""}
-        badges={[]}
-      />
+      <DataMainCard passportphoto={""} Name={""} Status={""} description={""} />
     </div>
   );
 }
