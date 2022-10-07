@@ -1,3 +1,4 @@
+import { signIn, signOut, useSession } from "next-auth/react";
 import {
   createStyles,
   Header,
@@ -69,6 +70,7 @@ interface HeaderSearchProps {
 }
 
 export default function HeaderMenuColored({ links }: HeaderSearchProps) {
+  const { data: session } = useSession();
   const [opened, { toggle }] = useDisclosure(false);
   const { classes } = useStyles();
 
@@ -101,10 +103,16 @@ export default function HeaderMenuColored({ links }: HeaderSearchProps) {
           />
           <Divider my="sm" />
 
-          <Group position="apart">
-            <Button variant="default">Log in</Button>
-            <Button>Sign up</Button>
-          </Group>
+          {session ? (
+            <button onClick={() => signOut()}>Sign out</button>
+          ) : (
+            <Group position="apart">
+              <Button variant="default" onClick={() => signIn()}>
+                Log in
+              </Button>
+              {/* <Button>Sign up</Button> */}
+            </Group>
+          )}
         </div>
       </Container>
     </Header>
