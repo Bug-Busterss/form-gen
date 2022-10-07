@@ -1,24 +1,15 @@
-import {
-  Card,
-  Group,
-  Text,
-  Menu,
-  ActionIcon,
-  Image,
-  SimpleGrid,
-  List,
-} from "@mantine/core";
+import { Card, Group, Text, List } from "@mantine/core";
 import { IconDots, IconEye, IconFileZip, IconTrash } from "@tabler/icons";
 
 export default function Eligibility() {
   return (
-    <Card withBorder shadow="sm" radius="md">
+    <Card withBorder shadow="sm" radius="md" m="sm">
       <Card.Section withBorder inheritPadding py="xs">
         <Group position="apart">
           <Text weight={500}>Eligibility Criteria</Text>
         </Group>
       </Card.Section>
-      <Card.Section>
+      <Card.Section m="sm">
         <Group>
           <List size="lg">
             <List.Item>
@@ -59,8 +50,6 @@ export default function Eligibility() {
           </List>
         </Group>
       </Card.Section>
-
-      <Card.Section mt="sm"></Card.Section>
     </Card>
   );
 }
