@@ -14,7 +14,7 @@ export default function Stepslider() {
     <>
       <Stepper active={active} onStepClick={setActive} breakpoint='sm'>
         <Stepper.Step label='First step' description='Create an account'>
-          Step 1 content: Create an account
+          Step 1 content: Add Your Details
           <Partone />
         </Stepper.Step>
         <Stepper.Step label='Second step' description='Upload Documents'>
@@ -22,7 +22,7 @@ export default function Stepslider() {
           <Parttwo />
         </Stepper.Step>
         <Stepper.Step label='Final step' description='Get full access'>
-          Step 3 content: Get full access
+          Step 3 content: Payment Method
         </Stepper.Step>
         <Stepper.Completed>
           Completed, click back button to get to previous step
