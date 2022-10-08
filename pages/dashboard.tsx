@@ -1,4 +1,4 @@
-import { Group, MantineProvider } from "@mantine/core";
+import { Group } from "@mantine/core";
 import React from "react";
 import DataMainCard from "../components/Datacard";
 

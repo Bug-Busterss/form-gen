@@ -18,8 +18,8 @@ export default function AuthInput({
       required
       onFocus={() => setFocused(true)}
       onBlur={() => setFocused(false)}
-      mt="md"
-      size="lg"
+      mt='md'
+      size='lg'
       {...formProps}
     />
   );

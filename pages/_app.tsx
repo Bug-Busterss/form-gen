@@ -30,8 +30,7 @@ function MyApp({
       theme={{
         /** Put your mantine theme override here */
         colorScheme: "light",
-      }}
-    >
+      }}>
       <SessionProvider>
         <HeaderMenuColored links={LINKS} />
         <Component {...pageProps} />

@@ -7,12 +7,12 @@ import { Text } from "@mantine/core";
 const Home: NextPage = () => {
   return (
     <div>
-      <Text sx={{ fontSize: "2.3rem" }} m="md" weight={700}>
+      <Text sx={{ fontSize: "2.3rem" }} m='md' weight={700}>
         Vidhwa Sahay Yojana
       </Text>
       <Eligibility />
       <Requiremnts />
-      <MyButton name="Apply Online" />
+      <MyButton name='Apply Online' />
     </div>
   );
 };
