@@ -6,7 +6,6 @@ import {
   Badge,
   Button,
   createStyles,
-  Box,
 } from "@mantine/core";
 
 const useStyles = createStyles((theme) => ({
