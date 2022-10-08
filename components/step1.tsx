@@ -62,13 +62,13 @@ export default function Partone() {
       </Group>
       <Group position='center' spacing='xl' grow>
         <NativeSelect
-          data={["Hindu", "Muslim", "Parsi", "Sikh", "Other"]}
+          data={["Select One", "Hindu", "Muslim", "Parsi", "Sikh", "Other"]}
           description='Select Your Religion'
           radius='md'
           size='md'
         />
         <NativeSelect
-          data={["O.B.C.", "S.T", "S.C.", "General", "Other"]}
+          data={["Select One", "O.B.C.", "S.T", "S.C.", "General", "Other"]}
           description='Select Your Caste'
           radius='md'
           size='md'
