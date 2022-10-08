@@ -61,12 +61,12 @@ export default function FloatingLabelInput({ label, required }: Props & any) {
       required={required}
       classNames={classes}
       value={value}
-      size="md"
+      size='md'
       onChange={(event) => setValue(event.currentTarget.value)}
       onFocus={() => setFocused(true)}
       onBlur={() => setFocused(false)}
-      mt="xl"
-      autoComplete="nope"
+      mt='xl'
+      autoComplete='nope'
     />
   );
 }
