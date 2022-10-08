@@ -81,12 +81,12 @@ export default function HeaderMenuColored({ links }: HeaderSearchProps) {
         key={link.label}
         href={link.link}
         className={classes.link}
-        onClick={(event) => event.preventDefault()}>
+        onClick={(event) => event.preventDefault()}
+      >
         {link.label}
       </a>
     );
   });
-
   return (
     <Header height={56} className={classes.header} mb={12}>
       <Container fluid>
@@ -98,22 +98,22 @@ export default function HeaderMenuColored({ links }: HeaderSearchProps) {
             opened={opened}
             onClick={toggle}
             className={classes.burger}
-            size='sm'
-            color='#fff'
+            size="sm"
+            color="#fff"
           />
-          <Divider my='sm' />
+          <Divider my="sm" />
 
           {session ? (
             <button onClick={() => signOut()}>Sign out</button>
           ) : (
-            <Group position='apart'>
-              <Link href='/login' passHref>
-                <Button variant='default' component='a'>
+            <Group position="apart">
+              <Link href="/login" passHref>
+                <Button variant="default" component="a">
                   Log in
                 </Button>
               </Link>
-              <Link href='/register' passHref>
-                <Button component='a'>Sign up</Button>
+              <Link href="/register" passHref>
+                <Button component="a">Sign up</Button>
               </Link>
             </Group>
           )}

@@ -1,86 +1,83 @@
-import { useState } from "react";
-import { createStyles, NativeSelect, Group } from "@mantine/core";
-import { DatePicker } from "@mantine/dates";
-import FloatingLabelInput from "./floatinginput";
+import { NativeSelect, Group } from '@mantine/core';
+import { DatePicker } from '@mantine/dates';
+import FloatingLabelInput from './floatinginput';
+import { useForm } from '@mantine/form';
+import { useRef } from 'react';
 
-const useStyles = createStyles(
-  (theme, { floating }: { floating: boolean }) => ({
-    root: {
-      position: "relative",
-    },
-
-    label: {
-      position: "absolute",
-      zIndex: 2,
-      top: 7,
-      left: theme.spacing.sm,
-      pointerEvents: "none",
-      color: floating
-        ? theme.colorScheme === "dark"
-          ? theme.white
-          : theme.black
-        : theme.colorScheme === "dark"
-        ? theme.colors.dark[3]
-        : theme.colors.gray[5],
-      transition:
-        "transform 150ms ease, color 150ms ease, font-size 150ms ease",
-      transform: floating ? `translate(-${theme.spacing.sm}px, -28px)` : "none",
-      fontSize: floating ? theme.fontSizes.xs : theme.fontSizes.sm,
-      fontWeight: floating ? 500 : 400,
-    },
-
-    required: {
-      transition: "opacity 150ms ease",
-      opacity: floating ? 1 : 0,
-    },
-
-    input: {
-      "&::placeholder": {
-        transition: "color 150ms ease",
-        color: !floating ? "transparent" : undefined,
-      },
-    },
-  })
-);
+interface Fields {
+  firstName: string;
+  middleName: string;
+  lastName: string;
+  fatherName: string;
+  bod: string;
+  aadhar: string;
+  address: string;
+}
 
 export default function Partone() {
-  const [focused, setFocused] = useState(false);
-  const [value, setValue] = useState("");
-  const { classes } = useStyles({
-    floating: value.trim().length !== 0 || focused,
+  const religionElRef = useRef<HTMLSelectElement>(null);
+  const casteElRef = useRef<HTMLSelectElement>(null);
+  const form = useForm<Fields>({
+    validate: {
+      aadhar: val =>
+        val.match(/^[2-9]{1}[0-9]{3}\\s[0-9]{4}\\s[0-9]{4}$/g) === null
+          ? 'Enter valid aadhar number'
+          : null,
+    },
   });
-
   return (
-    <div>
+    <form
+      onSubmit={form.onSubmit(async formData => {
+        console.log({ formData });
+      })}
+    >
       <Group position='center' spacing='xl' grow>
-        <FloatingLabelInput label='First Name' required='true' />
-        <FloatingLabelInput label={`Husband's Name`} required='true' />
-        <FloatingLabelInput label='Last Name ( Surname )' required='true' />
+        <FloatingLabelInput
+          label='First Name'
+          required
+          {...form.getInputProps('firstName')}
+        />
+        <FloatingLabelInput
+          label={`Middle name (Husband's Name)`}
+          required='true'
+          {...form.getInputProps('middleName')}
+        />
+        <FloatingLabelInput
+          label='Last Name (Surname)'
+          required
+          {...form.getInputProps('lastName')}
+        />
       </Group>
       <Group position='center' spacing='xl' grow>
-        <FloatingLabelInput label={`Father's Name`} required='true' />
+        <FloatingLabelInput
+          label={`Father's Name`}
+          required
+          {...form.getInputProps('fatherName')}
+        />
       </Group>
       <Group position='center' spacing='xl' grow>
         <NativeSelect
-          data={["Select One", "Hindu", "Muslim", "Parsi", "Sikh", "Other"]}
+          data={['Select One', 'Hindu', 'Muslim', 'Parsi', 'Sikh', 'Other']}
           description='Select Your Religion'
           radius='md'
           size='md'
+          ref={religionElRef}
         />
         <NativeSelect
-          data={["Select One", "O.B.C.", "S.T", "S.C.", "General", "Other"]}
+          data={['Select One', 'O.B.C.', 'S.T', 'S.C.', 'General', 'Other']}
           description='Select Your Caste'
           radius='md'
           size='md'
+          ref={casteElRef}
         />
       </Group>
       <Group position='center' spacing='xl' grow>
         <DatePicker placeholder='Pick date' label='Birth Date' withAsterisk />
-        <FloatingLabelInput label='Adhaar Card No.' required='true' />
+        <FloatingLabelInput label='Adhaar Card No.' required />
       </Group>
       <Group position='center' spacing='xl' grow>
-        <FloatingLabelInput label='Address' required='true' />
+        <FloatingLabelInput label='Address' required />
       </Group>
-    </div>
+    </form>
   );
 }
