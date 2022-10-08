@@ -1,3 +1,4 @@
+import Link from "next/link";
 import {
   Card,
   Image,
@@ -7,6 +8,7 @@ import {
   Button,
   createStyles,
 } from "@mantine/core";
+import { _BackgroundImage } from "@mantine/core/lib/BackgroundImage/BackgroundImage";
 
 const useStyles = createStyles((theme) => ({
   card: {
@@ -57,8 +59,8 @@ export default function DataMainCard({
   return (
     <Card
       withBorder
-      radius='md'
-      p='md'
+      radius="md"
+      p="md"
       className={classes.card}
       sx={(theme) => ({
         background: theme.colors.gray[0],
@@ -67,34 +69,51 @@ export default function DataMainCard({
         "@media (max-width: 755px)": {
           padding: theme.spacing.sm,
         },
-      })}>
+      })}
+    >
       <Card.Section>
         <Image src={passportphoto} alt={Name} height={180} />
       </Card.Section>
 
-      <Card.Section className={classes.section} mt='md'>
-        <Group position='center'>
-          <Text size='lg' weight={500}>
+      <Card.Section className={classes.section} mt="md">
+        <Group position="center">
+          <Text size="lg" weight={500}>
             {Name}
           </Text>
           <Group>
-            <Badge size='sm'>{Status}</Badge>
+            <Badge size="sm">{Status}</Badge>
           </Group>
         </Group>
       </Card.Section>
 
-      <Group mt='xs'>
+      <Group mt="xs">
         <Button
-          radius='md'
-          style={{ flex: 1 }}
+          radius="md"
+          style={{ flex: 2 }}
           sx={(theme) => ({
             fontSize: theme.fontSizes.md,
             "@media (max-width: 755px)": {
               fontSize: theme.fontSizes.sm,
             },
-          })}>
-          Show details
+          })}
+        >
+          Details
         </Button>
+        <Link href="/edit" passHref>
+          <Button
+            component="a"
+            radius="md"
+            style={{ flex: 2 }}
+            sx={(theme) => ({
+              fontSize: theme.fontSizes.md,
+              "@media (max-width: 755px)": {
+                fontSize: theme.fontSizes.sm,
+              },
+            })}
+          >
+            Edit
+          </Button>
+        </Link>
       </Group>
     </Card>
   );
