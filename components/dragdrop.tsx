@@ -46,11 +46,12 @@ export default function DropzoneButton({ label }: Props & any) {
         openRef={openRef}
         onDrop={() => {}}
         className={classes.dropzone}
-        radius='md'
+        radius="md"
         accept={[MIME_TYPES.pdf]}
-        maxSize={30 * 1024 ** 2}>
+        maxSize={30 * 1024 ** 2}
+      >
         <div style={{ pointerEvents: "none" }}>
-          <Group position='center'>
+          <Group position="center">
             <Dropzone.Accept>
               <IconDownload
                 size={50}
@@ -74,23 +75,20 @@ export default function DropzoneButton({ label }: Props & any) {
             </Dropzone.Idle>
           </Group>
 
-          <Text align='center' weight={700} size='lg' mt='xl'>
+          <Text align="center" weight={700} size="lg" mt="xl">
             <Dropzone.Accept>File Uploaded</Dropzone.Accept>
             <Dropzone.Reject>Pdf file less than 30mb</Dropzone.Reject>
             <Dropzone.Idle>{label}</Dropzone.Idle>
           </Text>
-          {/* <Text align='center' size='sm' mt='xs' color='dimmed'>
-            Drag&apos;n&apos;drop {label} here to upload. File size must be
-            under 30 mb.
-          </Text> */}
         </div>
       </Dropzone>
 
       <Button
         className={classes.control}
-        size='md'
-        radius='xl'
-        onClick={() => openRef.current?.()}>
+        size="md"
+        radius="xl"
+        onClick={() => openRef.current?.()}
+      >
         Select files
       </Button>
     </div>

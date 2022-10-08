@@ -1,11 +1,7 @@
 import {
-  Card,
-  Image,
   Text,
-  Badge,
   Button,
   Group,
-  CardSection,
   Center,
   Container,
   Paper,
@@ -25,24 +21,19 @@ export default function MyLogin() {
           radius="md"
           p="md"
           withBorder
-          sx={{ backgroundColor: "#909296" }}
+          sx={{ backgroundColor: "#A6A7AB" }}
         >
           <Text size="lg" weight={500}>
             Login
           </Text>
           <Stack mt="md">
-            <AuthInput
-              input={TextInput}
-              label="Username"
-              //   {...form.getInputProps("username")}
-            />
-            <AuthInput
-              input={PasswordInput}
-              label="Password"
-              //   {...form.getInputProps("password")}
-            />
+            <AuthInput input={TextInput} label="Email" />
+            <AuthInput input={PasswordInput} label="Password" />
           </Stack>
-          <Group position="apart" mt="md" grow>
+          <Group position="apart" mt="xl">
+            <Anchor type="button" sx={{ color: "#101113" }} size="xs">
+              Don't have an account? Register
+            </Anchor>
             <Button
               rightIcon={<IconLogin size="18px" />}
               variant="gradient"

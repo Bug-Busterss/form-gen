@@ -1,15 +1,20 @@
-import { Card, Group, Text, List, Center } from "@mantine/core";
+import { Card, Group, Text, List } from "@mantine/core";
 
 export default function Requiremnts() {
   return (
     <Card withBorder shadow="sm" radius="md" m="sm" mt="xl">
-      <Card.Section withBorder inheritPadding py="xs">
+      <Card.Section
+        withBorder
+        inheritPadding
+        py="xs"
+        sx={{ fontSize: "1.3rem" }}
+      >
         <Group position="apart">
           <Text weight={700}>Requiremnets</Text>
         </Group>
       </Card.Section>
 
-      <Card.Section m="sm">
+      <Card.Section m="sm" sx={{ fontSize: "1rem" }}>
         <Group>
           <List size="lg">
             <List.Item>Aadhar card</List.Item>

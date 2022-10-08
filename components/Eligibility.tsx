@@ -1,9 +1,8 @@
 import { Card, Group, Text, List } from "@mantine/core";
-import { IconDots, IconEye, IconFileZip, IconTrash } from "@tabler/icons";
 
 export default function Eligibility() {
   return (
-    <Card withBorder shadow="sm" radius="md" m="sm">
+    <Card withBorder shadow="sm" radius="md" m="sm" p="sm">
       <Card.Section
         withBorder
         inheritPadding
