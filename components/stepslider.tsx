@@ -4,7 +4,7 @@ import Partone from "./step1";
 import { Parttwo } from "./step2";
 
 export default function Stepslider() {
-  const [active, setActive] = useState(1);
+  const [active, setActive] = useState(0);
   const nextStep = () =>
     setActive((current) => (current < 3 ? current + 1 : current));
   const prevStep = () =>
@@ -13,15 +13,24 @@ export default function Stepslider() {
   return (
     <>
       <Stepper active={active} onStepClick={setActive} breakpoint='sm'>
-        <Stepper.Step label='First step' description='Create an account'>
+        <Stepper.Step
+          label='First step'
+          description='Create an account'
+          allowStepSelect={active > 0}>
           Step 1 content: Add Your Details
           <Partone />
         </Stepper.Step>
-        <Stepper.Step label='Second step' description='Upload Documents'>
+        <Stepper.Step
+          label='Second step'
+          description='Upload Documents'
+          allowStepSelect={active > 1}>
           Step 2 content: Upload Documents
           <Parttwo />
         </Stepper.Step>
-        <Stepper.Step label='Final step' description='Get full access'>
+        <Stepper.Step
+          label='Final step'
+          description='Get full access'
+          allowStepSelect={active > 2}>
           Step 3 content: Payment Method
         </Stepper.Step>
         <Stepper.Completed>

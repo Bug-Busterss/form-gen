@@ -16,7 +16,7 @@ export const Parttwo = () => {
         </Group>
         <Group grow>
           <DropzoneButton label='Passport Size Photo' />
-          <DropzoneButton label='Ration Size Photo' />
+          <DropzoneButton label='Ration Card Photo' />
         </Group>
       </Container>
     </div>
