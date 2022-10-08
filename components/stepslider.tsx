@@ -3,6 +3,7 @@ import { Stepper, Button, Group } from "@mantine/core";
 import Partone from "./step1";
 import { Parttwo } from "./step2";
 import { useForm } from "@mantine/form";
+import axios from "axios";
 
 export interface Fields {
   firstName: string;
@@ -35,6 +36,9 @@ export default function Stepslider() {
   return (
     <form
       onSubmit={form.onSubmit(async (formData) => {
+        if (active === 1) {
+          // const res = await axios.post();
+        }
         console.log({ formData });
       })}
     >

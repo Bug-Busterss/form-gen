@@ -56,3 +56,14 @@ model VerificationToken {
 
   @@unique([identifier, token])
 }
+
+model Data {
+  id         String   @id @default(cuid())
+  firstName  String
+  lastName   String
+  middleName String
+  fatherName String
+  dob        DateTime
+  aadhar     String   @unique
+  address    String
+}
