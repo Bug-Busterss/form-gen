@@ -7,6 +7,7 @@ import {
   Button,
   ActionIcon,
   createStyles,
+  Box,
 } from "@mantine/core";
 import { useState } from "react";
 
@@ -14,6 +15,13 @@ const useStyles = createStyles((theme) => ({
   card: {
     backgroundColor:
       theme.colorScheme === "dark" ? theme.colors.dark[7] : theme.white,
+    // [`@media (max-width: ${theme.breakpoints.xl}px)`]: {
+    //   backgroundColor: theme.colors.dark[6],
+    // },
+
+    // Static media query
+    // '@media (max-width: 800px)': {
+    //   backgroundColor: theme.colors.orange[6],
   },
 
   section: {
@@ -59,19 +67,7 @@ export default function DataMainCard({
   //   ));
 
   return (
-    <Card
-      withBorder
-      radius='md'
-      p='md'
-      className={classes.card}
-      sx={(theme) => ({
-        background: theme.colors.gray[0],
-        padding: theme.spacing.md,
-
-        "@media (max-width: 755px)": {
-          padding: theme.spacing.sm,
-        },
-      })}>
+    <Card withBorder radius='md' p='md' className={classes.card}>
       <Card.Section>
         <Image src={passportphoto} alt={Name} height={180} />
       </Card.Section>
@@ -88,7 +84,15 @@ export default function DataMainCard({
       </Card.Section>
 
       <Group mt='xs'>
-        <Button radius='md' style={{ flex: 1 }}>
+        <Button
+          radius='md'
+          style={{ flex: 1 }}
+          sx={(theme) => ({
+            fontSize: theme.fontSizes.md,
+            "@media (max-width: 755px)": {
+              fontSize: theme.fontSizes.sm,
+            },
+          })}>
           Show details
         </Button>
       </Group>
